@@ -4,8 +4,10 @@
 #
 # Show today's branch opening hours, taken from Google Calendars
 #
-# William Denton <wdenton@yorku.ca>
+# Original Author: William Denton <wdenton@yorku.ca>
 # http://github.com/wdenton/branchhours/
+# Forked-by: Ali Sadaqain <sadaqain@yorku.ca>
+# https://github.com/asadaqain/branchhours
 
 require 'net/http'
 require 'optparse'
@@ -65,12 +67,12 @@ config['libraries'].each do |library|
   # values will be hashes where the key is the library name and
   # the value is a human-readable string showing the opening hours
   # (or that the library is closed).
-
+  STDERR.puts "  " + library if options[:verbose]
+  
   calendarUrl = config['googleUrl'].gsub(/::ID::/, config[library]['id'])
   calendarUrl = calendarUrl.gsub(/::KEY::/, config['apikey'])
   calendarUrl << "&timeMin=" + timeMin
   calendarUrl << "&timeMax=" + timeMax
-  STDERR.puts "  " + library if options[:verbose]
   STDERR.puts "  " + calendarUrl if options[:verbose]
 
   begin

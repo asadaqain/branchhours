@@ -67,15 +67,21 @@ libraries: # Each library must have a corresponding section below
 - accessibility_services
 - archives
 - bronfman
+- bronfman_reference
 - frost
+- frost_reference
 - law
+- law_reference
 - map
 - resource_sharing
 - scott
-- scott_research
+- scott_information_desk
+- scott_reference
 - scott_study_space
 - smil
 - steacie
+- steacie_reference
+- steacie_interlibrary_loan
 
 accessibility_services:
   name: Accessibility Services
@@ -96,14 +102,28 @@ bronfman:
   mname: Bronfman
   title: The Peter F. Bronfman Business Library is on the second floor of the Schulich School of Business
   id: m7c4318hko4aum2kmucq0g7kts
-  url: /cms/bbl/
+  url: /web/bbl/
+
+bronfman_reference:
+  name: Bronfman Business Library Reference Desk
+  mname: Bronfman Reference Desk
+  title: The Peter F. Bronfman Business Library is on the second floor of the Schulich School of Business
+  id: bn4v49rath33aruanh0ebguc64
+  url: /web/bbl/
 
 frost:
   name: Frost Library
   mname: Frost
   title: The Leslie Frost Library is on the Glendon Campus
   id: m6imnub2uuugc472mgbjshe7dk
-  url: /cms/frost/
+  url: /web/frost/
+
+frost_reference:
+  name: Frost Library Reference Desk
+  mname: Frost Reference Desk
+  title: The Leslie Frost Library is on the Glendon Campus
+  id: 3uc0dnr8te0c5uq1fru5cpdf9s
+  url: /web/frost/
 
 law:
   name: Osgoode Law Library
@@ -112,12 +132,19 @@ law:
   id: bi3cua07pdt6r9qt81r5nvtqs8
   url: http://www.osgoode.yorku.ca/library/
 
+law_reference:
+  name: Osgoode Law Library Reference 
+  mname: Osgoode Reference
+  title: The Osgoode Law Library is in Osgoode Law School
+  id: 8egr1aav71b87mm3p2933egc78
+  url: http://www.osgoode.yorku.ca/library/
+
 map:
   name: Map Library
   mname: Map
   title: The Map Library is on the first floor of the Scott Library
   id: 1nrnldvrvqbvoq2ctgsjct9nn8
-  url: /cms/map/
+  url: /web/map/
 
 resource_sharing:
   name: Resource Sharing
@@ -131,14 +158,21 @@ scott:
   mname: Scott
   title: The Scott Library entrance is on the south side of Central Square
   id: rcmuv3rj2tk8kjcaja59njl1gs
-  url: /cms/library-departments/scottlibrary/
+  url: /web/scott/
 
-scott_research:
+scott_information_desk:
+  name: Scott Information Desk
+  mname: Scott Information Desk
+  title: The Scott Library entrance is on the south side of Central Square
+  id: 5s1kob17iein0g6pputunidavs
+  url: /web/research-learn/
+
+scott_reference:
   name: Research help
   mname: Research help
   title: Research help is available from librarians
   id: 1n3cglg65abupr5vnnvc7g44dk
-  url: /cms/scottreference/
+  url: /web/research-learn/
 
 scott_study_space:
   name: Study space
@@ -152,11 +186,25 @@ smil:
   mname: SMIL
   title: The Sound and Moving Image Library is on the first floor of the Scott Library
   id: pri08tmnju1th02vv37qmrs8ic
-  url: /cms/smil/
+  url: /web/smil/
 
 steacie:
   name: Steacie Science & Engineering Library
   mname: Steacie
   title: The Steacie Science and Engineering Library is on Campus Walk
   id: ss5b4rsslpjk0allmc0ej2b0no
-  url: /cms/steacie/
+  url: /web/steacie/
+
+steacie_reference:
+  name: Steacie Science & Engineering Library Reference Desk
+  mname: Steacie Reference Desk
+  title: The Steacie Science and Engineering Library Reference Desk
+  id: 6curllsgfa6f2k6rfg5b7cndvg
+  url: /web/research-learn/
+
+steacie_interlibrary_loan:
+  name: Steacie Science & Engineering Library Interlibrary Loan
+  mname: Steacie Interlibrary Loan
+  title: The Steacie Science and Engineering Library Interlibrary Loan
+  id: 7r02cicketb31t1ehgt6oqu77o
+  url: /web/research-learn/
