@@ -68,6 +68,7 @@ libraries: # Each library must have a corresponding section below
 # - archives
 # - bronfman
 - frost
+- frost_reference
 # - law
 # - map
 # - resource_sharing
@@ -103,7 +104,14 @@ frost:
   mname: Frost
   title: The Leslie Frost Library is on the Glendon Campus
   id: m6imnub2uuugc472mgbjshe7dk
-  url: /cms/frost/
+  url: /web/frost/
+  
+frost_reference:
+  name: Frost Library Reference Desk
+  mname: Frost Reference Desk
+  title: The Leslie Frost Library is on the Glendon Campus
+  id: 3uc0dnr8te0c5uq1fru5cpdf9s
+  url: /web/frost/
 
 # law:
 #   name: Osgoode Law Library
