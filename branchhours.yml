@@ -75,7 +75,7 @@ libraries: # Each library must have a corresponding section below
 - map
 - resource_sharing
 - scott
-- scott_circulation_hours
+- scott_circulation
 - scott_information_desk
 - scott_reference
 - scott_study_space
