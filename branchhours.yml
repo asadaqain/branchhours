@@ -75,6 +75,7 @@ libraries: # Each library must have a corresponding section below
 - map
 - resource_sharing
 - scott
+- scott_circulation_hours
 - scott_information_desk
 - scott_reference
 - scott_study_space
@@ -158,6 +159,13 @@ scott:
   mname: Scott
   title: The Scott Library entrance is on the south side of Central Square
   id: rcmuv3rj2tk8kjcaja59njl1gs
+  url: /web/scott/
+
+scott_circulation:
+  name: Scott Library Circulation
+  mname: Scott Circulation
+  title: The Scott Library entrance is on the south side of Central Square
+  id: 0b90i5uvlidqdtobg5u6ictjoc
   url: /web/scott/
 
 scott_information_desk:
