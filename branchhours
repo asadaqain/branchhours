@@ -113,6 +113,7 @@ config['libraries'].each do |library|
     end
     hours = "#{open} - #{close}"
     hours = "closed" if item['summary'] =~ /closed/i
+    hours = "holiday" if item['summary'] =~ /holiday/i
     if library == 'scott_study_space'
       # Special case.  For the Scott study space we
       # always want to show the title of the all-day event.
