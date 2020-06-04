@@ -134,7 +134,7 @@ law:
   url: http://www.osgoode.yorku.ca/library/
 
 law_reference:
-  name: Osgoode Law Library Reference 
+  name: Osgoode Law Library Reference
   mname: Osgoode Reference
   title: The Osgoode Law Library is in Osgoode Law School
   id: 8egr1aav71b87mm3p2933egc78
@@ -216,3 +216,10 @@ steacie_interlibrary_loan:
   title: The Steacie Science and Engineering Library Interlibrary Loan
   id: 7r02cicketb31t1ehgt6oqu77o
   url: /web/research-learn/
+
+frost_calvardez:
+  name: Frost Library Calvardez Hours
+  mname: Frost Library Calvardez Hours
+  title: Frost Library Calvardez Hours
+  id: jda6utgfr9gdmu61h0aassfsg8
+  url: /web/frost/
