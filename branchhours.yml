@@ -85,7 +85,7 @@ libraries: # Each library must have a corresponding section below
 - steacie
 - steacie_reference
 - steacie_interlibrary_loan
-- frost_calvardez
+- frost_clavardez
 
 accessibility_services:
   name: Accessibility Services
@@ -220,7 +220,7 @@ steacie_interlibrary_loan:
   id: 7r02cicketb31t1ehgt6oqu77o
   url: /web/research-learn/
 
-frost_calvardez:
+frost_clavardez:
   name: Frost Library Calvardez Hours
   mname: Frost Library Calvardez Hours
   title: Frost Library Calvardez Hours
