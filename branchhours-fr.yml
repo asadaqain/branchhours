@@ -69,6 +69,7 @@ libraries: # Each library must have a corresponding section below
 # - bronfman
 - frost
 - frost_reference
+- frost_clavardez_fr
 # - law
 # - map
 # - resource_sharing
@@ -105,12 +106,19 @@ frost:
   title: The Leslie Frost Library is on the Glendon Campus
   id: m6imnub2uuugc472mgbjshe7dk
   url: /web/frost/
-  
+
 frost_reference:
   name: Frost Library Reference Desk
   mname: Frost Reference Desk
   title: The Leslie Frost Library is on the Glendon Campus
   id: 3uc0dnr8te0c5uq1fru5cpdf9s
+  url: /web/frost/
+
+frost_clavardez_fr:
+  name: Frost Library Calvardez Hours
+  mname: Frost Library Calvardez Hours
+  title: The Leslie Frost Library Calvardez Hours
+  id: jda6utgfr9gdmu61h0aassfsg8
   url: /web/frost/
 
 # law:
