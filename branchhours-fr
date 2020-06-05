@@ -42,9 +42,9 @@ def prettytime (time)
   nice = nice + " " + time.strftime('%p')
   nice.downcase!
   nice = "noon" if nice == '12 PM'
-  
+
   nice =time.strftime('%kh%M') #French Request, override above
-  
+
   return nice
 end
 
@@ -77,10 +77,10 @@ config['libraries'].each do |library|
   STDERR.puts "  " + calendarUrl if options[:verbose]
 
   begin
-    # Had issues with Net::HTTP throwing exception of "end of file reached" on production. 
+    # Had issues with Net::HTTP throwing exception of "end of file reached" on production.
     # Not sure why but open-uri worked better.
-    
-    #calendarJSON = Net::HTTP.get_response(URI.parse(calendarUrl)).body 
+
+    #calendarJSON = Net::HTTP.get_response(URI.parse(calendarUrl)).body
     calendarJSON = open(calendarUrl).read
   rescue Exception => e
     STDERR.puts "Couldn't get #{library} calendar from Google"
@@ -115,6 +115,8 @@ config['libraries'].each do |library|
     hours = "#{open} - #{close}"
     hours = "closed" if item['summary'] =~ /closed/i
     hours = "holiday" if item['summary'] =~ /holiday/i
+    hours = "On call" if item['summary'] =~ /On call/i
+    hours = "24 Hours" if item['summary'] =~ /24 Hours/i
     if library == 'scott_study_space'
       # Special case.  For the Scott study space we
       # always want to show the title of the all-day event.
@@ -222,8 +224,8 @@ config['libraries'].each do |library|
       weekhtml.gsub!(/Saturday/, 'SAMEDI')
       weekhtml.gsub!(/Sunday/, 'DIMANCHE')
       weekhtml.gsub!(/closed/i, 'FERME')
-      weekhtml.gsub!(/holiday/i, 'JOUR FERIE')      
-      
+      weekhtml.gsub!(/holiday/i, 'JOUR FERIE')
+
       STDERR.puts day_to_get.strftime('%A') + " " + day_hours if options[:verbose]
     end
 

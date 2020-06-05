@@ -16,6 +16,8 @@ daysInAdvance: 10
 
 outputDir: ./outputdir/fr
 weeklyDir: ./outputdir/fr
+#outputDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/fr
+#weeklyDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/fr
 
 defaultFile: today.html
 
