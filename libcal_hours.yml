@@ -1,0 +1,24 @@
+# Config file for YUL LibCal calendars
+
+# Number of days of calendar information to grab at once.
+daysInAdvance: 10
+
+outputDir: ./outputdir
+weeklyDir: ./outputdir/weekly
+#outputDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/
+#weeklyDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/
+
+calendarURL: https://yorku.libcal.com/widget/hours/grid?iid=4129&format=json&weeks=2&systemTime=0
+
+# defaultFile: today.html
+
+# weektemplate: |
+#   <ul id="week_::WEEKID::" class="::HIDDEN::">
+#   <li> ::MONDAY:: </li>
+#   <li> ::TUESDAY:: </li>
+#   <li> ::WEDNESDAY:: </li>
+#   <li> ::THURSDAY:: </li>
+#   <li> ::FRIDAY:: </li>
+#   <li> ::SATURDAY:: </li>
+#   <li> ::SUNDAY:: </li>
+#   </ul>
