@@ -91,17 +91,17 @@ calendar['locations'].each do |location|
 
   STDERR.puts location_name if options[:verbose]
 
-  weekhtml << "<h3>#{location_name}</h3>\n"
+  weekhtml << "<h4>#{location_name}</h4>\n"
 
   location['weeks'].each_with_index do |week, index|
     # puts "************** WEEK ***************"
     # puts week.inspect
-
-    weekhtml << "<ul id='week_#{index.to_s}' "
+    weekhtml << "<div class='dept-container'>\n"
+    weekhtml << "<div id='week_#{index.to_s}' "
     if index == 0
-      weekhtml << "class='' >\n"
+      weekhtml << "class='dept-flex' >\n"
     else
-      weekhtml << "class='hidden' >\n"
+      weekhtml << "class='dept-flex hidden' >\n"
     end
 
     week.each do |day|
@@ -110,18 +110,19 @@ calendar['locations'].each do |location|
       hours = day[1]['rendered']
       if hours.empty?
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
-        weekline = "<li><span class=\"date\">#{dayweek_date}</span><span class=\"day\">#{day[0]}</span><span class=\"hours\">**notset**</span></li>\n"
-        STDERR.puts "WEEKLINE(blank): " + week_date + " " + day[0] + " NOTSET" if options[:verbose]
+        weekline = "<div class='flex-row'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">**notset**</div></div>\n"
+        STDERR.puts "WEEKLINE(blank): " + dayweek_date + " " + day[0] + " NOTSET" if options[:verbose]
       else
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
-        weekline = "<li><span class=\"date\">#{dayweek_date}</span><span class=\"day\">#{day[0]}</span><span class=\"hours\">#{day[1]['rendered']}</span></li>\n"
-        STDERR.puts "WEEKLINE: " + week_date + " " + day[0] + " " + day[1]['rendered'] if options[:verbose]
+        weekline = "<div class='flex-row'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">#{day[1]['rendered']}</div></div>\n"
+        STDERR.puts "WEEKLINE: " + dayweek_date + " " + day[0] + " " + day[1]['rendered'] if options[:verbose]
       end
       weekhtml << weekline
       weekline = ''
     end ## DAY LOOP
 
-    weekhtml << "</ul>\n"
+    weekhtml << "</div>\n"
+    weekhtml << "</div>\n"
 
     STDERR.puts '=============================' if options[:verbose]
 
