@@ -1,0 +1,54 @@
+.libcal-library-hours h3 {
+  color: #333;
+  padding: 10px 0;
+  border-bottom: 1px solid #e31837;
+}
+.libcal-library-hours .heading {
+   padding: 10px 15px 10px 0;
+}
+.libcal-library-hours .heading a {
+  text-align: right;
+  vertical-align: middle;
+ float:right;
+}
+.libcal-library-hours h4 {
+  text-transform: none;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+.libcal-library-hours .section {
+  padding: 10px;
+}
+.libcal-library-hours .dept-container .hidden {
+  display: none;
+}
+.libcal-library-hours .dept-flex .flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+.libcal-library-hours .dept-flex .flex-row:nth-child(odd) {
+  background: #eee;
+}
+
+.libcal-library-hours .dept-flex .date,
+.libcal-library-hours .dept-flex .day,
+.libcal-library-hours .dept-flex .hours {
+  font-size: 16px;
+  flex-grow: 1;
+}
+.libcal-library-hours .dept-flex .date {
+  width: 25%;
+}
+.libcal-library-hours .dept-flex .day {
+  width: 40%;
+  font-weight: bold;
+}
+.libcal-library-hours .dept-flex .hours { }
+.libcal-library-hours .dept-container {
+  border-right: 1px solid #eee;
+}
+.libcal-library-hours .today_date {
+  color: #e31837;
+}

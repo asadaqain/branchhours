@@ -108,13 +108,18 @@ calendar['locations'].each do |location|
       # puts "************** DAY ***************"
       # puts day.inspect
       hours = day[1]['rendered']
+      if Date.parse(day[1]['date']) == Date.today
+        is_today = 'today_date'
+      else
+        is_today = ''
+      end
       if hours.empty?
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
-        weekline = "<div class='flex-row'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">**notset**</div></div>\n"
+        weekline = "<div class='flex-row " + is_today + "'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">**notset**</div></div>\n"
         STDERR.puts "WEEKLINE(blank): " + dayweek_date + " " + day[0] + " NOTSET" if options[:verbose]
       else
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
-        weekline = "<div class='flex-row'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">#{day[1]['rendered']}</div></div>\n"
+        weekline = "<div class='flex-row " + is_today + "'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">#{day[1]['rendered']}</div></div>\n"
         STDERR.puts "WEEKLINE: " + dayweek_date + " " + day[0] + " " + day[1]['rendered'] if options[:verbose]
       end
       weekhtml << weekline
