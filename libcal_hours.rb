@@ -26,9 +26,9 @@ OptionParser.new do |opts|
 end.parse!
 
 # Hash to store opening hours, by date, then library
-schedule = Hash.new do |hash, key|
-  hash[key] = {}
-end
+# schedule = Hash.new do |hash, key|
+#   hash[key] = {}
+# end
 
 begin
   config = YAML.load_file(options[:config])
@@ -72,12 +72,12 @@ rescue Exception => e
 end
 
 # puts calendar.to_json
-hidden = ''
+#hidden = ''
 
 calendar['locations'].each do |location|
   location_name = location['name']
-  location_id = location['lid']
-  location_url = location['url']
+  # location_id = location['lid']
+  # location_url = location['url']
   weekhtml = ''
 
   begin
@@ -97,7 +97,7 @@ calendar['locations'].each do |location|
     # puts "************** WEEK ***************"
     # puts week.inspect
     weekhtml << "<div class='dept-container'>\n"
-    weekhtml << "<div id='week_#{index.to_s}' "
+    weekhtml << "<div class='week_#{index.to_s}' "
     if index == 0
       weekhtml << "class='dept-flex' >\n"
     else
