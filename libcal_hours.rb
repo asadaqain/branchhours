@@ -78,6 +78,7 @@ calendar['locations'].each do |location|
   location_name = location['name']
   # location_id = location['lid']
   # location_url = location['url']
+  location_desc = location['desc']
   weekhtml = ''
 
   begin
@@ -90,18 +91,20 @@ calendar['locations'].each do |location|
   end
 
   STDERR.puts location_name if options[:verbose]
+  STDERR.puts location_desc if options[:verbose]
 
   weekhtml << "<h4>#{location_name}</h4>\n"
+  weekhtml << "#{location_desc}\n"
 
   location['weeks'].each_with_index do |week, index|
     # puts "************** WEEK ***************"
     # puts week.inspect
     weekhtml << "<div class='dept-container'>\n"
-    weekhtml << "<div class='week_#{index.to_s}' "
+    weekhtml << "<div class='week_#{index.to_s} "
     if index == 0
-      weekhtml << "class='dept-flex' >\n"
+      weekhtml << "dept-flex' >\n"
     else
-      weekhtml << "class='dept-flex hidden' >\n"
+      weekhtml << "dept-flex hidden' >\n"
     end
 
     week.each do |day|
@@ -115,7 +118,7 @@ calendar['locations'].each do |location|
       end
       if hours.empty?
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
-        weekline = "<div class='flex-row " + is_today + "'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">**notset**</div></div>\n"
+        weekline = "<div class='flex-row " + is_today + "'><div class=\"date\">#{dayweek_date}</div><div class=\"day\">#{day[0]}</div><div class=\"hours\">** N/A **</div></div>\n"
         STDERR.puts "WEEKLINE(blank): " + dayweek_date + " " + day[0] + " NOTSET" if options[:verbose]
       else
         dayweek_date = Date.parse(day[1]['date']).strftime('%b %d')
