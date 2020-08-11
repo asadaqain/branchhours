@@ -12,6 +12,7 @@ require 'yaml'
 require 'optparse'
 require 'open-uri'
 require 'fileutils'
+load 'libcal_hours_functions.rb'
 
 options = {}
 options[:verbose] = false
@@ -77,15 +78,17 @@ end
 calendar['locations'].each do |location|
   location_name = location['name']
   # location_id = location['lid']
-  # location_url = location['url']
+  location_url = location['url']
   location_desc = location['desc']
   weekhtml = ''
 
+  location_name_sanitized = sanitize_filename(location_name)
+
   begin
-    weekfile = File.new("#{config['weeklyDir']}/#{location_name}_hours.html", "w+")
+    weekfile = File.new("#{config['weeklyDir']}/#{location_name_sanitized}_hours.html", "w+")
     weekfile.chmod(0664)
   rescue Exception => e
-    STDERR.puts "Problem creating #{config['weeklyDir']}/#{location_name}_hours.html. Aborting"
+    STDERR.puts "Problem creating #{config['weeklyDir']}/#{location_name_sanitized}_hours.html. Aborting"
     STDERR.puts e
     exit 1
   end
@@ -93,9 +96,22 @@ calendar['locations'].each do |location|
   STDERR.puts location_name if options[:verbose]
   STDERR.puts location_desc if options[:verbose]
 
-  weekhtml << "<h4>#{location_name}</h4>\n"
-  weekhtml << "#{location_desc}\n"
+  ###################
+  ## Location Name ##
+  ###################
+  if location_url == ""
+    weekhtml << "<h4>#{location_name}</h4>\n"
+  else
+    weekhtml << "<h4><a href='#{location_url}'>#{location_name}</a></h4>\n"
+  end
+  ##########################
+  ## Location Description ##
+  ##########################
+  weekhtml << "<div class='dept-desc'>#{location_desc}</div>\n"
 
+  ####################
+  ## Location Hours ##
+  ####################
   location['weeks'].each_with_index do |week, index|
     # puts "************** WEEK ***************"
     # puts week.inspect
