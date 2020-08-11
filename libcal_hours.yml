@@ -3,9 +3,9 @@
 # Number of days of calendar information to grab at once.
 daysInAdvance: 10
 
-#outputDir: ./outputdir
-#weeklyDir: ./outputdir/weekly
-outputDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/
-weeklyDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/weekly
+outputDir: ./outputdir
+weeklyDir: ./outputdir/weekly
+#outputDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/
+#weeklyDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/weekly
 
 calendarURL: https://yorku.libcal.com/widget/hours/grid?iid=4129&format=json&weeks=4&systemTime=0
