@@ -57,7 +57,7 @@ begin
   # Not sure why but open-uri worked better.
 
   #calendarJSON = Net::HTTP.get_response(URI.parse(calendarUrl)).body
-  calendarJSON = open(calendarUrl).read
+  calendarJSON = URI.open(calendarUrl).read
 rescue Exception => e
   STDERR.puts "Couldn't get #{library} calendar from Google"
   STDERR.puts "Can't connect to Google!? Aborting"
