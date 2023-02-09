@@ -12,7 +12,7 @@ require 'yaml'
 require 'optparse'
 require 'open-uri'
 require 'fileutils'
-load 'libcal_hours_functions.rb'
+require_relative 'libcal_hours_functions.rb'
 
 options = {}
 options[:verbose] = false
