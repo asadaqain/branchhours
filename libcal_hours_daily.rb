@@ -73,10 +73,6 @@ rescue Exception => e
   exit 1
 end
 
-# puts calendar.to_json
-#hidden = ''
-puts JSON.pretty_generate(calendar['locations'])
-
 calendar['locations'].each do |location|
   location_name = location['name']
   location_url = location['url']
