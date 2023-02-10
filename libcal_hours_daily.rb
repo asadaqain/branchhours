@@ -40,8 +40,6 @@ end
 
 STDERR.puts "Creating Output Directories if needed ..."
 begin
-  FileUtils.mkdir_p config['outputDir']
-  FileUtils.mkdir_p config['weeklyDir']
   FileUtils.mkdir_p config['dailyDir']
 rescue Exception => e
   puts e
@@ -73,9 +71,22 @@ rescue Exception => e
   exit 1
 end
 
-calendar['locations'].each do |location|
+all_locations_file = "all_locations_daily_hours.html"
+
+begin
+  wholedayfile = File.new("#{config['dailyDir']}/all_locations_daily_hours.html", "w+")
+  wholedayfile.chmod(0664)
+rescue Exception => e
+  STDERR.puts "Problem creating #{config['dailyDir']}/#{all_locations_file}. Aborting"
+  STDERR.puts e
+  exit 1
+end
+
+wholedayfile.write("<div class='row'>")
+
+calendar['locations'].each_with_index do |location, i|
   location_name = location['name']
-  location_url = location['url']
+  # location_url = location['url']
   location_name_sanitized = sanitize_filename(location_name)
   dayline = ''
 
@@ -90,13 +101,27 @@ calendar['locations'].each do |location|
 
   STDERR.puts location_name if options[:verbose]
   STDERR.puts "CARD LAYOUT" if options[:verbose]
-  dayline = "<div class='card'>\n
-    <div class='card-body'>\n
-    <h6 class='card-title'>#{location_name}</h6>\n
-    <i class='fa-regular fa-clock'></i> <span class='fw-bold small'>#{location['rendered']}</span>\n
-    </div>\n</div>"
-
+  dayline = "
+    <div class='card border-0'>\n
+      <div class='card-body text-center'>\n
+        <p class='card-title fw-bold text-primary small'>#{location_name}</p>\n
+        <p class='card-text small fw-bolder'>
+          <i class='far fa-clock'></i> <span class='text-muted'>#{location['day']}\n
+          </span>#{location['rendered']}
+        </p>\n
+      </div>\n
+    </div>"
   STDERR.puts dayline if options[:verbose]
 
   dayfile.write(dayline)
+  
+  if (i+1)%3 == 0
+    wholedayfile.write("</div><div class='row'>")
+    wholedayfile.write(dayline)
+  else  
+    wholedayfile.write(dayline)
+  end
+  
+
 end
+wholedayfile.write('</div>')
