@@ -86,7 +86,7 @@ wholedayfile.write("<div class='row'>")
 
 calendar['locations'].each_with_index do |location, i|
   location_name = location['name']
-  # location_url = location['url']
+  location_url = location['url']
   location_name_sanitized = sanitize_filename(location_name)
   dayline = ''
 
@@ -104,7 +104,7 @@ calendar['locations'].each_with_index do |location, i|
   dayline = "
     <div class='card border-0'>\n
       <div class='card-body text-center p-2'>\n
-        <p class='card-title fw-bold text-primary'>#{location_name}</p>\n
+        <p class='card-title fw-bold text-primary'><a href='#{location_url}'>#{location_name}</a></p>\n
         <p class='card-text small fw-bolder'>
           <i class='far fa-clock'></i> <span class='text-muted'>#{location['day']}\n
           </span>#{location['rendered']}
@@ -138,7 +138,7 @@ end
 dayline = "
   <div class='card justify-content-center text-center border-0'>\n
     <div class='card-body text-center p-2'>\n
-      <p class='card-title fw-bold text-primary'>See All Hours</p>\n
+      <p class='card-title fw-bold text-dark'>See All Hours</p>\n
       <p class='card-text small fw-bolder'>
         <i class='far fa-clock'></i> <a href='https://www.library.yorku.ca//web/hours-and-locations'>Location and Hours</a>
       </p>\n
