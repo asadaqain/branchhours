@@ -137,12 +137,11 @@ end
 
 dayline = "
   <div class='card justify-content-center text-center border-0'>\n
-    <div class='card-body text-center p-2'>\n
-      <p class='card-title fw-bold text-dark'>See All Hours</p>\n
+    <div class='card-body text-center p-3'>\n
+      <p class='card-title fw-bold text-dark'><a href='https://www.library.yorku.ca//web/hours-and-locations'>See All Hours</a></p>\n
       <p class='card-text small fw-bolder'>
-        <i class='far fa-clock'></i> <a href='https://www.library.yorku.ca//web/hours-and-locations'>Location and Hours</a>
+        <i class='far fa-clock'></i>
       </p>\n
-
     </div>\n
   </div>"
 
