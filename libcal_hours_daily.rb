@@ -103,8 +103,8 @@ calendar['locations'].each_with_index do |location, i|
   STDERR.puts "CARD LAYOUT" if options[:verbose]
   dayline = "
     <div class='card border-0'>\n
-      <div class='card-body text-center'>\n
-        <p class='card-title fw-bold text-primary small'>#{location_name}</p>\n
+      <div class='card-body text-center p-2'>\n
+        <p class='card-title fw-bold text-primary'>#{location_name}</p>\n
         <p class='card-text small fw-bolder'>
           <i class='far fa-clock'></i> <span class='text-muted'>#{location['day']}\n
           </span>#{location['rendered']}
@@ -125,3 +125,27 @@ calendar['locations'].each_with_index do |location, i|
 
 end
 wholedayfile.write('</div>')
+
+begin
+  dayfile = File.new("#{config['dailyDir']}/more_daily_hours.html", "w+")
+  dayfile.chmod(0664)
+rescue Exception => e
+  STDERR.puts "Problem creating #{config['dailyDir']}/more_daily_hours.html. Aborting"
+  STDERR.puts e
+  exit 1
+end
+
+dayline = "
+  <div class='card justify-content-center text-center border-0'>\n
+    <div class='card-body text-center p-2'>\n
+      <p class='card-title fw-bold text-primary'>See All Hours</p>\n
+      <p class='card-text small fw-bolder'>
+        <i class='far fa-clock'></i> <a href='https://www.library.yorku.ca//web/hours-and-locations'>Location and Hours</a>
+      </p>\n
+
+    </div>\n
+  </div>"
+
+STDERR.puts dayline if options[:verbose]
+dayfile.write(dayline)
+ 
