@@ -133,7 +133,7 @@ selected_rows << custom_link_row
 # Step 4: Write to file.
 wholedayfile.write("<div class='container-fluid bg-white p-2'>")
 selected_rows.each do |row|
-  wholedayfile_sidebar.write(row)
+  wholedayfile.write(row)
 end
 wholedayfile.write('</div>') # Close the last row
 wholedayfile.close
