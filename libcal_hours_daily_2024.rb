@@ -106,11 +106,13 @@ end.sort_by { |location| selected_lids.index(location['lid']) }
 ##########################
 
 # Step 2: Build row strings for the sorted locations
-selected_rows = sorted_locations.map do |location|
+selected_rows = sorted_locations.each_with_index.map do |location, index|
   location_name = location['name']
   location_url = location['url']
   short_name = short_names[location['lid']] || location_name
-  "<div class='row align-items-center p-2 border-bottom'>
+  row_class = index.even? ? 'bg-light' : 'bg-white' # Alternating row colors
+
+  "<div class='row align-items-center p-2 border-bottom #{row_class}'>
     <!-- Location Column -->
     <div class='col-12 col-md'>
       <a href='#{location_url}' class='text-decoration-none'>#{short_name}</a>
