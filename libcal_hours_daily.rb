@@ -102,7 +102,7 @@ calendar['locations'].each_with_index do |location, i|
   STDERR.puts location_name if options[:verbose]
   STDERR.puts "CARD LAYOUT" if options[:verbose]
   dayline = "
-    <div class='card border-0'>\n
+    <div class='card border border-1'>\n
       <div class='card-body text-center p-2'>\n
         <p class='card-title fw-bold text-primary'><a href='#{location_url}'>#{location_name}</a></p>\n
         <p class='card-text small fw-bolder'>
@@ -136,8 +136,8 @@ rescue Exception => e
 end
 
 dayline = "
-  <div class='card justify-content-center text-center border-0'>\n
-    <div class='card-body text-center p-3'>\n
+  <div class='card justify-content-center text-center border border-1'>\n
+    <div class='card-body text-center p-2'>\n
       <p class='card-title fw-bold text-dark'><a href='https://www.library.yorku.ca//web/hours-and-locations'>See All Hours</a></p>\n
       <p class='card-text small fw-bolder'>
         <i class='far fa-clock'></i>
