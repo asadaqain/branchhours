@@ -131,11 +131,9 @@ custom_link_row = "<div class='row align-items-center p-2 border-bottom'>
 selected_rows << custom_link_row
 
 # Step 4: Write to file.
-wholedayfile_sidebar.write("<div class='container-fluid bg-white p-2'>")
+wholedayfile.write("<div class='container-fluid bg-white p-2'>")
 selected_rows.each do |row|
   wholedayfile_sidebar.write(row)
 end
-wholedayfile_sidebar.write('</div>') # Close the last row
-wholedayfile_sidebar.close
-
-wholedayfile.write("<div class='row'>")
+wholedayfile.write('</div>') # Close the last row
+wholedayfile.close
