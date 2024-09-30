@@ -87,7 +87,7 @@ end
 selected_lids = [6946, 6947, 6934, 6939, 6952, 6926, 8109, 7571, 8111]
 short_names = {
   6926 => "Steacie Science and Engineering Library",
-  6952 => "Leslie Frost Library/Bibliothèques",
+  6952 => "Frost Library/Bibliothèque Frost",
   6934 => "Scott Library",
   6946 => "Libraries Chat",
   6947 => "Clavardage des bibliothèques",
