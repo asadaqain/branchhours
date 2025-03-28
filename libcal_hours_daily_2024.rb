@@ -133,7 +133,7 @@ custom_link_row = "<div class='row align-items-center p-2 border-bottom'>
 selected_rows << custom_link_row
 
 # Step 4: Write to file.
-wholedayfile.write("<div class='container-fluid bg-white p-2'>")
+wholedayfile.write("<div class='container-fluid bg-white'>")
 selected_rows.each do |row|
   wholedayfile.write(row)
 end
