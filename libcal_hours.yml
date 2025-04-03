@@ -3,11 +3,12 @@
 # Number of days of calendar information to grab at once.
 daysInAdvance: 10
 
-outputDir: ./outputdir
-weeklyDir: ./outputdir/weekly
-dailyDir: ./outputdir/daily
-#outputDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/
-#weeklyDir: /var/www/html/web/wp-content/themes/library-2013-theme/include/weekly
+#outputDir: ./outputdir
+#weeklyDir: ./outputdir/weekly
+#dailyDir: ./outputdir/daily
+weeklyDir: /var/www/html/web/wp-content/themes/yul-york2020-child/include/weekly
+outputDir: /var/www/html/web/wp-content/themes/yul-york2020-child/include/
+dailyDir: /var/www/html/web/wp-content/themes/yul-york2020-child/include/daily
 
 calendarURL: https://yorku.libcal.com/widget/hours/grid?iid=4129&format=json&weeks=4&systemTime=0
 calendarDailyURL: https://yorku.libcal.com/api_hours_today.php?iid=4129&lid=0&format=json&systemTime=0
