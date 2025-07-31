@@ -110,7 +110,7 @@ selected_rows = sorted_locations.each_with_index.map do |location, index|
   location_name = location['name']
   location_url = location['url']
   short_name = short_names[location['lid']] || location_name
-  row_class = index.even? ? 'bg-light' : 'bg-white' # Alternating row colors
+  row_class = index.even? ? 'bg-yul-light' : 'bg-white' # Alternating row colors
 
   "<div class='row align-items-center p-2 border-bottom #{row_class}'>
     <!-- Location Column -->
